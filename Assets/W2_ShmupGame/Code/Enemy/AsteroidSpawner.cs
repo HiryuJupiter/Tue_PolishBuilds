@@ -12,6 +12,11 @@ public class AsteroidSpawner : MonoBehaviour
     [SerializeField] float spawnInterval = 0.5f;
 
 
+    public GameObject SpawnSingleAsteroid()
+    {
+        return SpawnAsteroid();
+    }
+
     void Start()
     {
         Spawn(200);
@@ -38,9 +43,9 @@ public class AsteroidSpawner : MonoBehaviour
         }
     }
 
-    void SpawnAsteroid ()
+    GameObject SpawnAsteroid ()
     {
-        Instantiate(pf_Asteroid, GetRandomSpawnPoint(), Quaternion.identity);
+        return Instantiate(pf_Asteroid, GetRandomSpawnPoint(), Quaternion.identity);
     }
 
     Vector2 GetRandomSpawnPoint() => new Vector2(Random.Range(-spawnBoundX, spawnBoundX), spawnY);
