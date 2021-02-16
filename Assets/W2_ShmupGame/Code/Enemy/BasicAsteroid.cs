@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicAsteroid : EnemyBase
+public class BasicAsteroid : EnemyBase, IDamagable
 {
     [Header("Movement")]
-    public float boundY;
     public float moveSpeed = 0.9f;
 
     [Header("Rotation")]
@@ -17,11 +16,19 @@ public class BasicAsteroid : EnemyBase
     int hp = 10;
     SpriteRenderer sr;
 
+    //Cache
+    float upperBound;
+
     #region Mono
     private void Awake()
     {
         RandomizeStartingParameters();
         sr = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    void Start ()
+    {
+        upperBound = Settings.instance.ScreenBound_Top + 1f;
     }
 
     void Update()
@@ -31,7 +38,12 @@ public class BasicAsteroid : EnemyBase
     }
     #endregion
 
-
+    #region Public 
+    public void HitByEnemy(int damage = 1)
+    {
+        ReduceHealth(damage);
+    }
+    #endregion
 
     #region Movement
     void Move()
@@ -42,7 +54,7 @@ public class BasicAsteroid : EnemyBase
 
     void CheckIfOutOfBounds()
     {
-        if (transform.position.y < -boundY)
+        if (transform.position.y < -upperBound)
         {
             Destroy(gameObject);
         }
@@ -50,6 +62,8 @@ public class BasicAsteroid : EnemyBase
     #endregion
 
     #region Collision
+
+
     void ReduceHealth (int amount)
     {
         hp -= amount;
@@ -70,16 +84,6 @@ public class BasicAsteroid : EnemyBase
         sr.color = Color.white;
     }
 
-    public override void HitsPlayerBody(Collider2D col)
-    {
-        ReduceHealth(10);
-    }
-
-    public override void HitsPlayerBullet(Collider2D col)
-    {
-        Debug.Log("hits bullet");
-        ReduceHealth(2);
-    }
     #endregion
 
     #region Minor methods
@@ -95,5 +99,7 @@ public class BasicAsteroid : EnemyBase
         rotationSpeed += rotationSpeed * Random.Range(-rotationModRange, rotationModRange);
         rotationSpeed = Random.Range(0, 2) == 1 ? rotationSpeed : -rotationSpeed;
     }
+
+
     #endregion
 }

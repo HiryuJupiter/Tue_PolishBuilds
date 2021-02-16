@@ -154,7 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e37c0578ee2bdb44a182cbd6ab68d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMask: 64
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
   boundY: 5.6
   moveSpeed: 0.9
   rotationSpeed: 50

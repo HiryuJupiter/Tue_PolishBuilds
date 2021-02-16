@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet_Basic : MonoBehaviour
+public abstract class EnemyBullet_Basic : MonoBehaviour
 {
-    void Start()
+    [SerializeField] LayerMask enemyLayer;
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        CollisionUtil.TryHitIDamagableTarget(collision, enemyLayer);
     }
 
-    void Update()
-    {
-        
-    }
+    public abstract void Shoot();
 }

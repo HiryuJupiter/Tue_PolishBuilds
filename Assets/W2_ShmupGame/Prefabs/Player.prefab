@@ -73,13 +73,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f431e81a59bb40349978c30bbfa98d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pf_Bullet: {fileID: 5586254354868105254, guid: 841e71c54bee0c144a1c33fff82a7e45,
+  pf_BasicBullet: {fileID: 5586254354868105254, guid: 841e71c54bee0c144a1c33fff82a7e45,
     type: 3}
   shootPoint: {fileID: 1524152074619298032}
-  moveBound_X: 2.5
-  moveBound_Y: 4.7
-  steering: 20
-  moveSpeed: 1000
 --- !u!50 &-7551080964023192372
 Rigidbody2D:
   serializedVersion: 4

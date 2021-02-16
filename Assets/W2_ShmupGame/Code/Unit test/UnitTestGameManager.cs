@@ -4,20 +4,13 @@ using System.Collections;
 public class UnitTestGameManager : MonoBehaviour
 {
     [SerializeField] AsteroidSpawner spawner;
-
-    public AsteroidSpawner GetSpawner ()
-    {
-        return spawner;
-    }
+    [SerializeField] GameObject playerShip;
 
 
-    void Start()
-    {
+    public AsteroidSpawner Spawner => spawner;
 
-    }
+    public GameObject PlayerShip => playerShip;
+    public bool GameOver;
+    
 
-    void Update()
-    {
-
-    }
 }

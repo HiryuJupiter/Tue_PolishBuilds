@@ -155,3 +155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boundY: 5.2
   speed: 20
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
