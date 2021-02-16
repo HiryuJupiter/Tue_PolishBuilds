@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerBullet_LinearMoveUp : MonoBehaviour
 {
-    [SerializeField] float boundY;
     [SerializeField] float speed = 50f;
     [SerializeField] LayerMask enemyLayer;
+
+    Settings setting;
+
+    private void Start()
+    {
+        setting = Settings.instance;
+    }
 
     void Update()
     {
@@ -18,12 +24,15 @@ public class PlayerBullet_LinearMoveUp : MonoBehaviour
     #region Movement
     void Move()
     {
-        transform.Translate(new Vector2(0f, speed * Time.deltaTime));
+        transform.Translate(transform.up * speed * Time.deltaTime, Space.World);
     }
 
     void CheckIfOutOfBounds()
     {
-        if (transform.position.y > boundY)
+        if (transform.position.x > setting.ScreenBound_Right ||
+            transform.position.x < setting.ScreenBound_Left ||
+            transform.position.y > setting.ScreenBound_Top ||
+            transform.position.y < setting.ScreenBound_Bot)
         {
             Destroy(gameObject);
         }

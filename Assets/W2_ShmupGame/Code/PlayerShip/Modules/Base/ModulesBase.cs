@@ -5,11 +5,13 @@ public abstract class ModulesBase
 {
     protected PlayerShipController player;
     protected PlayerShipStatus status;
+    protected PlayerShipFeedbacks feedback;
 
     public ModulesBase(PlayerShipController player)
     {
         this.player = player;
         status = player.Status;
+        feedback = player.Feedback;
     }
 
     public virtual void OnModuleEntry() { }

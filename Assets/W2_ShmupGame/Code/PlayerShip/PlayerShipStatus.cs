@@ -16,6 +16,8 @@ public class PlayerShipStatus
 
     public int bomb { get; private set; } = MaxBombLevel;
 
+    public bool InPrecisionMode;
+
     //Physics
     public Vector2 velocity;
 

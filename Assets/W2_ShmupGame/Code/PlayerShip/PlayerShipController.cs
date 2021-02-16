@@ -13,6 +13,7 @@ public class PlayerShipController : MonoBehaviour
     Dictionary<ShipStates, ShipStateBase> stateLookUp;
 
     public PlayerShipStatus Status { get; private set; }
+    public PlayerShipFeedbacks Feedback { get; private set; }
     public Transform ShootPoint => shootPoint;
     public GameObject Pf_BasicBullet => pf_BasicBullet;
 
@@ -21,6 +22,9 @@ public class PlayerShipController : MonoBehaviour
     {
         //Initialization
         Status = new PlayerShipStatus();
+
+        //Reference
+        Feedback = GetComponent<PlayerShipFeedbacks>();
     }
 
     IEnumerator Start()

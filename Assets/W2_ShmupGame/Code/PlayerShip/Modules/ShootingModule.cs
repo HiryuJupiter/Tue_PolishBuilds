@@ -48,13 +48,13 @@ public class ShootingModule : ModulesBase
     {
         if (CanShoot)
         {
-            PlayerShipController.Instantiate(player.Pf_BasicBullet, player.ShootPoint.position, Quaternion.identity);
+            PlayerShipController.Instantiate(player.Pf_BasicBullet, player.ShootPoint.position, player.ShootPoint.rotation);
         }
     }
 
     bool CanShoot => input.shootHold && ShootingCooldownReady;
     bool ShootingCooldownReady => shootCooldownTimer <= 0f;
 
-    void ResetTimer() => shootCooldownTimer = 0.2f;
+    void ResetTimer() => shootCooldownTimer = 0.25f;
 
 }

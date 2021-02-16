@@ -6,19 +6,23 @@ public class Settings : MonoBehaviour
 {
     public static Settings instance;
 
-    [Header("Ship Control")]
+    [Header("Ship Movement")]
     [SerializeField] float playerBaseMoveSpeed = 1000f;
     [SerializeField] float playerBaseAcceleration = 20f;
+    public float PlayerBaseMoveSpeed => playerBaseMoveSpeed;
+    public float PlayerBaseAcceleration => playerBaseAcceleration;
+
+    [Header("Ship Rotation")]
+    [SerializeField] float playerTiltAcceleration = 10f;
+    [SerializeField] float playerTiltAngle = 10f;
+    public float PlayerTiltAcceleration => playerTiltAcceleration;
+    public float PlayerTiltAngle => playerTiltAngle;
 
     [Header("Shooting")]
     //[SerializeField] float playerBaseAcceleration = 20f;
 
     [Header("Scene object reference")]
     [SerializeField] Camera mainCamera;
-
-    //Player ships
-    public float PlayerBaseMoveSpeed => playerBaseMoveSpeed;
-    public float PlayerBaseAcceleration => playerBaseAcceleration;
 
     //Screen bounds
     public float ScreenBound_Top { get; private set; }

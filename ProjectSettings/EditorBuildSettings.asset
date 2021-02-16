@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/W2_ShmupGame/Scenes/W2_ShmupGame.unity
+    guid: e66dcf866d275fb41801da7d55cb0c9a
   m_configObjects: {}
