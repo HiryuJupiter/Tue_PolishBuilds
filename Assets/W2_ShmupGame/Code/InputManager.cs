@@ -35,7 +35,7 @@ public class InputManager : MonoBehaviour
         else
             moveY = 0;
 
-        shootHold = Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Space);
+        shootHold = Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return);
         shootDown = Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Space);
 
     }

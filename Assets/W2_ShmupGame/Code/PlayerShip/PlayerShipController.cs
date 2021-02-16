@@ -74,11 +74,4 @@ public class PlayerShipController : MonoBehaviour
         }
     }
     #endregion
-
-    #region Triggers
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Debug.Log("player ontrigger enters somthing: ");
-    }
-    #endregion
 }

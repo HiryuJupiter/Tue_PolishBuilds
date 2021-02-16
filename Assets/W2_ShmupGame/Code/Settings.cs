@@ -6,9 +6,12 @@ public class Settings : MonoBehaviour
 {
     public static Settings instance;
 
-    [Header("Player Ship")]
+    [Header("Ship Control")]
     [SerializeField] float playerBaseMoveSpeed = 1000f;
     [SerializeField] float playerBaseAcceleration = 20f;
+
+    [Header("Shooting")]
+    //[SerializeField] float playerBaseAcceleration = 20f;
 
     [Header("Scene object reference")]
     [SerializeField] Camera mainCamera;

@@ -334,12 +334,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9193719334200827490, guid: d7808a8af284aee4a813e66a66b20193,
-        type: 3}
-      propertyPath: pf_BasicBullet
-      value: 
-      objectReference: {fileID: 5586254354868105254, guid: 841e71c54bee0c144a1c33fff82a7e45,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7808a8af284aee4a813e66a66b20193, type: 3}
 --- !u!1 &1135206903
@@ -374,7 +368,6 @@ MonoBehaviour:
   playerBaseMoveSpeed: 1000
   playerBaseAcceleration: 20
   mainCamera: {fileID: 214225637}
-  pf_playerBullet: {fileID: 0}
 --- !u!4 &1135206905
 Transform:
   m_ObjectHideFlags: 0

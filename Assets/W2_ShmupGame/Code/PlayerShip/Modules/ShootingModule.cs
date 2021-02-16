@@ -5,18 +5,18 @@ public class ShootingModule : ModulesBase
 {
     InputManager input;
 
-
     Transform transform;
     Settings settings;
 
-    public ShootingModule(PlayerShipController player) : base (player)
+    float shootCooldownTimer = -1;
+
+    public ShootingModule(PlayerShipController player) : base(player)
     {
         transform = player.transform;
 
         input = InputManager.Instance;
         settings = Settings.instance;
     }
-
 
     public override void OnModuleEntry()
     {
@@ -25,6 +25,7 @@ public class ShootingModule : ModulesBase
     public override void OnModuleUpdate()
     {
         ShootControl();
+        TickTimer();
     }
 
     public override void OnModuleFixedUpdate()
@@ -35,11 +36,25 @@ public class ShootingModule : ModulesBase
     {
     }
 
+    void TickTimer()
+    {
+        if (shootCooldownTimer > 0)
+        {
+            shootCooldownTimer -= Time.deltaTime;
+        }
+    }
+
     void ShootControl()
     {
-        if (input.shootDown)
+        if (CanShoot)
         {
             PlayerShipController.Instantiate(player.Pf_BasicBullet, player.ShootPoint.position, Quaternion.identity);
         }
     }
+
+    bool CanShoot => input.shootHold && ShootingCooldownReady;
+    bool ShootingCooldownReady => shootCooldownTimer <= 0f;
+
+    void ResetTimer() => shootCooldownTimer = 0.2f;
+
 }
