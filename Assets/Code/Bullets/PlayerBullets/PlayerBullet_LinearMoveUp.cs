@@ -2,12 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet_LinearMoveUp : MonoBehaviour
+public class PlayerBullet_LinearMoveUp : MonoBehaviour, IPoolable
 {
     [SerializeField] float speed = 50f;
     [SerializeField] LayerMask enemyLayer;
 
     Settings setting;
+    Pool pool;
+
+    public void InitialActivation(Pool pool)
+    {
+        this.pool = pool;
+    }
+
+    public void Reactivation()
+    {
+    }
 
     private void Start()
     {
@@ -34,7 +44,7 @@ public class PlayerBullet_LinearMoveUp : MonoBehaviour
             transform.position.y > setting.ScreenBound_Top ||
             transform.position.y < setting.ScreenBound_Bot)
         {
-            Destroy(gameObject);
+            DestroySelf();
         }
     }
     #endregion
@@ -52,9 +62,15 @@ public class PlayerBullet_LinearMoveUp : MonoBehaviour
         {
             if (CollisionUtil.TryHitIDamagableTarget(hit.collider, enemyLayer))
             {
-                Destroy(gameObject);
+                DestroySelf();
             }
         }
     }
     #endregion
+
+    void DestroySelf ()
+    {
+
+        pool.Despawn(gameObject);
+    }
 }
