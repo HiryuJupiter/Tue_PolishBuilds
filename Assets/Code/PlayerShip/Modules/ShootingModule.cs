@@ -7,6 +7,7 @@ public class ShootingModule : ModulesBase
 
     Transform transform;
     Settings settings;
+    PoolManager pools;
 
     float shootCooldownTimer = -1;
 
@@ -16,6 +17,7 @@ public class ShootingModule : ModulesBase
 
         input = InputManager.Instance;
         settings = Settings.instance;
+        pools = PoolManager.instance;
     }
 
     public override void OnModuleEntry()
@@ -48,13 +50,12 @@ public class ShootingModule : ModulesBase
     {
         if (CanShoot)
         {
-            PlayerShipController.Instantiate(player.Pf_BasicBullet, player.ShootPoint.position, player.ShootPoint.rotation);
+            pools.basicBullet.Spawn(player.ShootPoint.position, player.ShootPoint.rotation);
+            //ResetTimer();
         }
     }
 
-    bool CanShoot => input.shootHold && ShootingCooldownReady;
-    bool ShootingCooldownReady => shootCooldownTimer <= 0f;
-
-    void ResetTimer() => shootCooldownTimer = 0.25f;
+    bool CanShoot => input.shootHold && shootCooldownTimer <= 0f;
+    void ResetTimer() => shootCooldownTimer = .01f;
 
 }
