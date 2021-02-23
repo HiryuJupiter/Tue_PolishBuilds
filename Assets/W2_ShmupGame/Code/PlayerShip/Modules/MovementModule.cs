@@ -67,10 +67,7 @@ public class MovementModule : ModulesBase
     {
         if (input.shiftHold)
         {
-            if (HasHorizontalInput)
-            {
-                feedback.SetRotationAngle(input.moveX);
-            }
+            feedback.SetRotationAngle(HasHorizontalInput ? input.moveX : 0f);
             precisionModeModifier = 0.25f;
             status.InPrecisionMode = true;
         }

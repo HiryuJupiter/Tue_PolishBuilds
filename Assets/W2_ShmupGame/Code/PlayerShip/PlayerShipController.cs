@@ -53,6 +53,16 @@ public class PlayerShipController : MonoBehaviour
         currentStateClass.OnStateFixedUpdate();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (GameLayers.Instance.IsTargetOn_EnemyBulletLayer(collision.gameObject) ||
+            GameLayers.Instance.IsTargetOn_EnemyBodyLayer(collision.gameObject))
+        {
+            GameManager.GameOver = true;
+        }
+    }
+
+
     //private void OnGUI()
     //{
     //    GUI.Label(new Rect(20, 20, 200, 20), "MovingLeft " +Status.);
