@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class AsteroidSpawner : MonoBehaviour
 {
+    [SerializeField] GameObject pf_Asteroid;
 
     [SerializeField] float spawnY = 5f;
     [SerializeField] float spawnBoundX = 5f;
 
     [SerializeField] float spawnInterval = 0.5f;
 
-    PoolManager pool;
 
     public GameObject SpawnSingleAsteroid()
     {
@@ -19,7 +19,6 @@ public class AsteroidSpawner : MonoBehaviour
 
     void Start()
     {
-        pool = PoolManager.instance;
         Spawn(200);
     }
 
@@ -46,7 +45,7 @@ public class AsteroidSpawner : MonoBehaviour
 
     GameObject SpawnAsteroid ()
     {
-        return pool.asteroids.Spawn(GetRandomSpawnPoint(), Quaternion.identity);
+        return Instantiate(pf_Asteroid, GetRandomSpawnPoint(), Quaternion.identity);
     }
 
     Vector2 GetRandomSpawnPoint() => new Vector2(Random.Range(-spawnBoundX, spawnBoundX), spawnY);
