@@ -58,7 +58,6 @@ public class PlayerShipController : MonoBehaviour
         if (GameLayers.Instance.IsTargetOn_EnemyBulletLayer(collision.gameObject) ||
             GameLayers.Instance.IsTargetOn_EnemyBodyLayer(collision.gameObject))
         {
-            Debug.Log("player hits asteroids");
             GameManager.GameOver = true;
         }
     }
