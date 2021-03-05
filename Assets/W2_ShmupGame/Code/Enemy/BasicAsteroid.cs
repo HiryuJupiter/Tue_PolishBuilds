@@ -13,7 +13,7 @@ public class BasicAsteroid : EnemyBase, IDamagable
     public float moveModRange = 0.4f;
     public float scaleModRange = 0.5f;
 
-    int hp = 100;
+    int hp = 10;
     SpriteRenderer sr;
 
     //Cache
