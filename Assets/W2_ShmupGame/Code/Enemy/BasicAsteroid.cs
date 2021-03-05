@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicAsteroid : EnemyBase, IDamagable, IPoolable
+public class BasicAsteroid : EnemyBase, IDamagable
 {
     [Header("Movement")]
     public float moveSpeed = 0.9f;
@@ -18,7 +18,6 @@ public class BasicAsteroid : EnemyBase, IDamagable, IPoolable
 
     //Cache
     float upperBound;
-    Pool pool;
 
     #region Mono
     private void Awake()
@@ -40,15 +39,6 @@ public class BasicAsteroid : EnemyBase, IDamagable, IPoolable
     #endregion
 
     #region Public 
-    public void InitialActivation(Pool pool)
-    {
-        this.pool = pool;
-    }
-
-    public void Reactivation()
-    {
-    }
-
     public void HitByEnemy(int damage = 1)
     {
         ReduceHealth(damage);
@@ -109,5 +99,7 @@ public class BasicAsteroid : EnemyBase, IDamagable, IPoolable
         rotationSpeed += rotationSpeed * Random.Range(-rotationModRange, rotationModRange);
         rotationSpeed = Random.Range(0, 2) == 1 ? rotationSpeed : -rotationSpeed;
     }
+
+
     #endregion
 }

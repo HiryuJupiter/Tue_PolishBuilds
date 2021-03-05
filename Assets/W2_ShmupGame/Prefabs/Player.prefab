@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2864751955173253304}
   - component: {fileID: 9193719334200827490}
   - component: {fileID: -7551080964023192372}
-  - component: {fileID: 564523594}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -94,23 +93,10 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 1
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &564523594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995720796993366667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a11e58c7228390469a29f4863d7211a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteTransformRoot: {fileID: 1805297130378016349}
 --- !u!1 &2254382824361885771
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +169,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0c75b977f4a456d46a7af02964fa4aa7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8396226, g: 0.30770227, b: 0.2811944, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -295,7 +281,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0c75b977f4a456d46a7af02964fa4aa7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8396226, g: 0.30770227, b: 0.2811944, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -410,7 +396,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0c75b977f4a456d46a7af02964fa4aa7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8396226, g: 0.30770227, b: 0.2811944, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
