@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2261478116967887850}
   - component: {fileID: 2261478116967887851}
   - component: {fileID: 7645573109842385559}
+  - component: {fileID: 4625990372961001684}
   m_Layer: 0
   m_Name: '#Managers (1)'
   m_TagString: Untagged
@@ -57,8 +58,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f57fefa859eff42a0aad1f78145335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pf_Asteroid: {fileID: 8428222238846567176, guid: 3b05ac24cfdef154aa6acb0db53efcb4,
-    type: 3}
   spawnY: 5.5
   spawnBoundX: 2
   spawnInterval: 1
@@ -86,6 +85,22 @@ MonoBehaviour:
   EnemyBulletLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &4625990372961001684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2261478116967887848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564b8d0df62c80647bc74ef93663bd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pf_basicBullet: {fileID: 5586254354868105254, guid: 841e71c54bee0c144a1c33fff82a7e45,
+    type: 3}
+  pf_Asteroid: {fileID: 8428222238846567176, guid: 3b05ac24cfdef154aa6acb0db53efcb4,
+    type: 3}
 --- !u!1 &2261478116980316656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,13 +1088,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2261478118620756454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0324aa206bb32e84babcc489becda891, type: 3}
+  m_Script: {fileID: 11500000, guid: 7633c0a66dadc5b49a3f9221cbc8ed51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBaseMoveSpeed: 1000
-  playerBaseAcceleration: 20
+  playerBaseMoveSpeed: 4
+  playerBaseAcceleration: 1
   playerTiltAcceleration: 100
-  playerTiltAngle: 15.5
+  playerTiltAngle: 12
   mainCamera: {fileID: 2261478117566073588}
 --- !u!1 &2261478118623857799
 GameObject:
@@ -1219,7 +1234,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8764541439199192548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57bc5b3e04522154f93e0c92abdedb70, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b9982b958493e9428a86a05801c76c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 2261478116967887851}
