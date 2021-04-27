@@ -79,6 +79,11 @@ Shader "Unlit/HealthBar"
                 //float flash = (1 - floor(_Health * 3)) * cos(_Time.y * 15) * 0.4;
                  //return float4(flash.xxx, 1);
 
+                //4th method
+                //float flashMask = _Health <  0.3f;
+                //healthBarColor = lerp(healthBarColor, healthBarColor * flash, flashMask);
+
+
                  return float4(healthBarColor + flash, healthBarMask);
                  //return float4(healthBarColor * flash, healthBarMask); //This darkens it
                 //return float4(healthBarColor.rgb * healthBarMask, 1);
